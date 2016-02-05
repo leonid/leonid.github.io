@@ -1,29 +1,53 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Романов Леонид</title>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
-	</head>
-	<body>
-		<nav class="pure-menu-list">
-    		<ul>
-        		<li><a href="/">Главная</a></li>
-	        	<li><a href="/about">О себе</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Блог</a></li>
-    		</ul>
-		</nav>
-		<div class="pure-g container">
-    		<div class="blurb">
-        		<h1>Привет, меня зовут Леонид!</h1>
-				    <p>Абвгдеёжзийклмнопрстуфхцчшщъыьэюя <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:romanov.leonid@gmail.com">email</a></li>
-        		<li><a href="https://github.com/leonid">github.com/leonid</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+	<h1 class="page-heading">Записи</h1>
+
+	<ul class="post-list">
+		{% for post in site.posts %}
+		<li>
+			<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+			<h2>
+				<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</h2>
+		</li>
+		{% endfor %}
+	</ul>
+
+	<p class="rss-subscribe">подписаться <a href="{{ "/feed.xml" | prepend: site.baseurl }}">на RSS</a></p>
+
+</div>
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+	<!--<head>-->
+		<!--<title>Романов Леонид</title>-->
+		<!--<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">-->
+	<!--</head>-->
+	<!--<body>-->
+		<!--<nav class="pure-menu-list">-->
+    		<!--<ul>-->
+        		<!--<li><a href="/">Главная</a></li>-->
+	        	<!--<li><a href="/about">О себе</a></li>-->
+        		<!--<li><a href="/cv">CV</a></li>-->
+        		<!--<li><a href="/blog">Блог</a></li>-->
+    		<!--</ul>-->
+		<!--</nav>-->
+		<!--<div class="pure-g container">-->
+    		<!--<div class="blurb">-->
+        		<!--<h1>Привет, меня зовут Леонид!</h1>-->
+				    <!--<p>Абвгдеёжзийклмнопрстуфхцчшщъыьэюя <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>-->
+    		<!--</div>&lt;!&ndash; /.blurb &ndash;&gt;-->
+		<!--</div>&lt;!&ndash; /.container &ndash;&gt;-->
+		<!--<footer>-->
+    		<!--<ul>-->
+        		<!--<li><a href="mailto:romanov.leonid@gmail.com">email</a></li>-->
+        		<!--<li><a href="https://github.com/leonid">github.com/leonid</a></li>-->
+			<!--</ul>-->
+		<!--</footer>-->
+	<!--</body>-->
+<!--</html>-->
